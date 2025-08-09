@@ -62,6 +62,9 @@ export interface Season {
   episodes: Episode[]
 }
 
+// Add EpisodeInfo as an alias for Season to maintain compatibility
+export type EpisodeInfo = Season
+
 export interface TVShow {
   id: string
   title: string
