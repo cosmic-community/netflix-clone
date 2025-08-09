@@ -1,7 +1,7 @@
-import { EpisodeInfo, Episode } from '@/types'
+import { Season } from '@/types'
 
 interface EpisodeListProps {
-  episodes: EpisodeInfo[]
+  episodes: Season[]
 }
 
 export default function EpisodeList({ episodes }: EpisodeListProps) {
@@ -13,14 +13,14 @@ export default function EpisodeList({ episodes }: EpisodeListProps) {
 
   return (
     <div className="space-y-8">
-      {episodes.map((seasonInfo: EpisodeInfo) => (
+      {episodes.map((seasonInfo) => (
         <div key={seasonInfo.season}>
           <h3 className="text-xl font-semibold mb-4 text-white">
             Season {seasonInfo.season}
           </h3>
           
           <div className="space-y-4">
-            {seasonInfo.episodes.map((episode: Episode, index: number) => (
+            {seasonInfo.episodes.map((episode, index) => (
               <div key={index} className="bg-gray-900 rounded-lg p-4">
                 <div className="flex items-start justify-between">
                   <div className="flex-1">
