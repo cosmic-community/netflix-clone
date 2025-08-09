@@ -24,6 +24,7 @@ async function getTVShow(slug: string): Promise<TVShow | null> {
 }
 
 export default async function TVShowPage({ params }: { params: Promise<{ slug: string }> }) {
+  // IMPORTANT: In Next.js 15+, params are now Promises and MUST be awaited
   const { slug } = await params;
   const tvShow = await getTVShow(slug);
 
@@ -35,6 +36,7 @@ export default async function TVShowPage({ params }: { params: Promise<{ slug: s
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  // IMPORTANT: In Next.js 15+, params are now Promises and MUST be awaited
   const { slug } = await params;
   const tvShow = await getTVShow(slug);
 

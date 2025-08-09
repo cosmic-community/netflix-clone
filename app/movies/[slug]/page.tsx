@@ -24,6 +24,7 @@ async function getMovie(slug: string): Promise<Movie | null> {
 }
 
 export default async function MoviePage({ params }: { params: Promise<{ slug: string }> }) {
+  // IMPORTANT: In Next.js 15+, params are now Promises and MUST be awaited
   const { slug } = await params;
   const movie = await getMovie(slug);
 
@@ -35,6 +36,7 @@ export default async function MoviePage({ params }: { params: Promise<{ slug: st
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  // IMPORTANT: In Next.js 15+, params are now Promises and MUST be awaited
   const { slug } = await params;
   const movie = await getMovie(slug);
 
