@@ -11,7 +11,8 @@ async function getMovie(slug: string): Promise<Movie | null> {
         type: 'movies',
         slug: slug
       })
-      .depth(2);
+      .depth(2)
+      .props(['id', 'title', 'slug', 'metadata']);
     
     return response.object as Movie;
   } catch (error) {

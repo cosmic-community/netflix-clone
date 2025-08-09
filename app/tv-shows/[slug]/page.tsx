@@ -11,7 +11,8 @@ async function getTVShow(slug: string): Promise<TVShow | null> {
         type: 'tv-shows',
         slug: slug
       })
-      .depth(2);
+      .depth(2)
+      .props(['id', 'title', 'slug', 'metadata']);
     
     return response.object as TVShow;
   } catch (error) {
